@@ -1,33 +1,75 @@
 # Team-Aetherion - UOWD Aerospace Machine Vision System
 
-Advanced computer vision system for object detection, shape recognition, color analysis, and real-time tracking.
+Advanced computer vision system for real-time object detection, shape recognition, and color analysis.
+
+## Quick Start
+
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run basic system
+python machine_vision.py
+
+# Run advanced system with tracking
+python advanced_machine_vision.py
+
+# Run demo
+python demo.py
+
+# Run tests
+python test_system.py
+```
+
+## Docker Deployment
+
+```bash
+# Build image
+docker build -t team-aetherion-vision .
+
+# Run container
+docker run --rm -it --device /dev/video0 team-aetherion-vision
+```
+
+See `DOCKER_DEPLOYMENT.md` for detailed deployment instructions including AWS.
 
 ## Features
 
-### Core Capabilities
-- **Real-time Object Detection** with live camera feed
-- **Shape Recognition** - Detects: Circle, Square, Rectangle, Triangle, Pentagon, Hexagon, Oval, Star, Complex shapes
-- **Color Detection** - Recognizes: Red, Green, Blue, Yellow, Orange, Purple, Cyan, Pink, White, Black
-- **Hex Color Values** - Displays precise hex codes for detected colors
-- **Object Quantification** - Real-time counting of detected objects
-- **Edge Detection** - Multiple algorithms (Canny, Sobel, Laplacian)
-- **Object Circling** - Automatic contour detection and highlighting
-- **Bounding Boxes** - Precise object localization
+**Core Detection:**
+- Real-time object detection with live camera feed
+- Shape recognition: Circle, Square, Rectangle, Triangle, Pentagon, Hexagon, Oval, Star
+- Color detection: Red, Green, Blue, Yellow, Orange, Purple, Cyan, Pink, White, Black
+- Hex color values with visual display
+- Object counting and quantification
 
-### Advanced Features
-- **Object Tracking** - Assigns unique IDs to objects across frames
-- **Statistical Analysis** - Area, perimeter, circularity measurements
-- **FPS Counter** - Real-time performance monitoring
-- **Data Export** - Save detection results to JSON files
-- **Multi-level Edge Detection** - Switchable edge detection methods
-- **Enhanced Color Analysis** - Statistical color detection with median values
+**Advanced Processing:**
+- Edge detection (Canny, Sobel, Laplacian, Combined)
+- Object tracking with unique IDs
+- Statistical analysis (area, perimeter, circularity)
+- Data export to JSON format
+- FPS monitoring
 
-## Installation
+## Files
 
-1. **Install Python Dependencies:**
-```bash
-pip install -r requirements.txt
-```
+- `machine_vision.py` - Basic real-time detection system
+- `advanced_machine_vision.py` - Enhanced version with tracking
+- `demo.py` - Interactive demonstration with sample objects
+- `test_system.py` - Comprehensive test suite
+- `requirements.txt` - Python dependencies
+- `Dockerfile` - Container configuration
+- `DOCKER_DEPLOYMENT.md` - Deployment guide
+
+## Requirements
+
+- Python 3.8+
+- OpenCV 4.12.0+
+- NumPy 2.2.6+
+- Pillow 10.0.1+
+- Camera/webcam for live detection
+
+## License
+
+MIT License - See LICENSE file for details.
 
 2. **Required Libraries:**
 - OpenCV (cv2) - Computer vision processing
